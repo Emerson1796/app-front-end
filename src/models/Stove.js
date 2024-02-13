@@ -42,7 +42,6 @@ class Oven {
     }
 }
 
-// Classe principal que representa o fogão
 export class Stove {
     constructor(color, dimensions, brand, containerId) {
         this.color = color;
@@ -56,6 +55,7 @@ export class Stove {
     initialize() {
         // Cria a estrutura HTML do fogão dentro do container
         this.container.innerHTML = `
+            <div id="user-info"></div>
             <h2>${this.brand} Stove</h2>
             <p>Color: ${this.color}</p>
             <p>Dimensions: ${this.dimensions}</p>

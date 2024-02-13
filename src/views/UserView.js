@@ -8,7 +8,7 @@ export class UserView {
         const user = await this.userService.fetchUser();
         document.getElementById('user-info').innerHTML = `
             <h2>User Information</h2>
-            <p>Name: ${user.name}</p>
+            <p>Name: ${user.nome}</p>
             <p>Email: ${user.email}</p>
         `;
     }
