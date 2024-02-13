@@ -5,11 +5,18 @@ export class UserView {
     }
 
     async render() {
-        const user = await this.userService.fetchUser();
-        document.getElementById('user-info').innerHTML = `
+        const infos = await this.userService.fetchUser();
+        let userInfoHtml = `
             <h2>User Information</h2>
-            <p>Name: ${user.nome}</p>
-            <p>Email: ${user.email}</p>
+            <p>Name: ${infos.user.nome}</p>
+            <p>Email: ${infos.user.email}</p>
+            <h2>Addresses</h2>
         `;
+    
+        infos.addresses.forEach(address => {
+            userInfoHtml += `<p>Address: ${address}</p>`;
+        });
+    
+        document.getElementById('user-info').innerHTML = userInfoHtml;
     }
 }
